@@ -1,0 +1,56 @@
+2020-09-28 10:33:53,219 selenium.webdriver.remote.remote_connection DEBUG POST http://127.0.0.1:59796/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-09-28 10:33:53,227 urllib3.connectionpool DEBUG Starting new HTTP connection (1): 127.0.0.1:59796
+2020-09-28 10:33:55,810 urllib3.connectionpool DEBUG http://127.0.0.1:59796 "POST /session HTTP/1.1" 200 719
+2020-09-28 10:33:55,810 selenium.webdriver.remote.remote_connection DEBUG Finished Request
+2020-09-28 10:33:55,810 selenium.webdriver.remote.remote_connection DEBUG POST http://127.0.0.1:59796/session/2f93da3065c58d13880dcc5256d03bae/window/maximize {}
+2020-09-28 10:33:57,998 urllib3.connectionpool DEBUG http://127.0.0.1:59796 "POST /session/2f93da3065c58d13880dcc5256d03bae/window/maximize HTTP/1.1" 200 51
+2020-09-28 10:33:57,998 selenium.webdriver.remote.remote_connection DEBUG Finished Request
+2020-09-28 10:33:57,998 selenium.webdriver.remote.remote_connection DEBUG POST http://127.0.0.1:59796/session/2f93da3065c58d13880dcc5256d03bae/timeouts {"implicit": 10000}
+2020-09-28 10:33:57,998 urllib3.connectionpool DEBUG http://127.0.0.1:59796 "POST /session/2f93da3065c58d13880dcc5256d03bae/timeouts HTTP/1.1" 200 14
+2020-09-28 10:33:57,998 selenium.webdriver.remote.remote_connection DEBUG Finished Request
+2020-09-28 10:33:57,998 framework_design_oops.src.app_logic ERROR There is some issue in browser launching
+2020-09-28 10:33:57,998 selenium.webdriver.remote.remote_connection DEBUG POST http://127.0.0.1:59796/session/2f93da3065c58d13880dcc5256d03bae/url {"url": "https://www.goibibo.com/"}
+2020-09-28 10:34:00,434 urllib3.connectionpool DEBUG http://127.0.0.1:59796 "POST /session/2f93da3065c58d13880dcc5256d03bae/url HTTP/1.1" 200 14
+2020-09-28 10:34:00,434 selenium.webdriver.remote.remote_connection DEBUG Finished Request
+2020-09-28 10:34:00,435 framework_design_oops.tests.test_smoke_cases INFO test cases: test_search_on_google, executed started
+2020-09-28 10:34:00,435 framework_design_oops.browser_actions.browser_actions DEBUG This the element on which will put new data : ('name', 'q')
+2020-09-28 10:34:00,435 selenium.webdriver.remote.remote_connection DEBUG POST http://127.0.0.1:59796/session/2f93da3065c58d13880dcc5256d03bae/element {"using": "css selector", "value": "[name=\"q\"]"}
+2020-09-28 10:34:02,291 urllib3.connectionpool DEBUG http://127.0.0.1:59796 "POST /session/2f93da3065c58d13880dcc5256d03bae/element HTTP/1.1" 200 14
+2020-09-28 10:34:02,293 selenium.webdriver.remote.remote_connection DEBUG Finished Request
+2020-09-28 10:34:02,810 selenium.webdriver.remote.remote_connection DEBUG POST http://127.0.0.1:59796/session/2f93da3065c58d13880dcc5256d03bae/element {"using": "css selector", "value": "[name=\"q\"]"}
+2020-09-28 10:34:02,810 urllib3.connectionpool DEBUG http://127.0.0.1:59796 "POST /session/2f93da3065c58d13880dcc5256d03bae/element HTTP/1.1" 404 1000
+2020-09-28 10:34:02,810 selenium.webdriver.remote.remote_connection DEBUG Finished Request
+2020-09-28 10:34:02,810 root ERROR test case : test_search_on_google, execution failed :
+Traceback (most recent call last):
+  File "E:\AutomationFramework\Aug2020BatchFramework\framework_design_oops\tests\test_smoke_cases.py", line 13, in test_search_on_google
+    setup.search_on_google(search_value)
+  File "E:\AutomationFramework\Aug2020BatchFramework\framework_design_oops\src\app_logic.py", line 24, in search_on_google
+    self.input_text(GOOGLE_SEARCH_BOX, value)
+  File "E:\AutomationFramework\Aug2020BatchFramework\framework_design_oops\browser_actions\browser_actions.py", line 29, in input_text
+    element = self.wait.until(EC.presence_of_element_located(selector))
+  File "C:\Users\Deepesh Yadav\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\wait.py", line 71, in until
+    value = method(self._driver)
+  File "C:\Users\Deepesh Yadav\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\expected_conditions.py", line 64, in __call__
+    return _find_element(driver, self.locator)
+  File "C:\Users\Deepesh Yadav\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\expected_conditions.py", line 415, in _find_element
+    raise e
+  File "C:\Users\Deepesh Yadav\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\support\expected_conditions.py", line 411, in _find_element
+    return driver.find_element(*by)
+  File "C:\Users\Deepesh Yadav\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "C:\Users\Deepesh Yadav\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Deepesh Yadav\AppData\Roaming\Python\Python38\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=85.0.4183.121)
+
+2020-09-28 10:34:03,061 framework_design_oops.tests.test_smoke_cases INFO test cases: test_book_hotel, executed started
+2020-09-28 10:34:03,061 selenium.webdriver.remote.remote_connection DEBUG POST http://127.0.0.1:59796/session/2f93da3065c58d13880dcc5256d03bae/element {"using": "xpath", "value": "//a[@href='/hotels/']//span[text()='Hotels']"}
+2020-09-28 10:34:03,061 urllib3.connectionpool DEBUG http://127.0.0.1:59796 "POST /session/2f93da3065c58d13880dcc5256d03bae/element HTTP/1.1" 404 1000
+2020-09-28 10:34:03,061 selenium.webdriver.remote.remote_connection DEBUG Finished Request
+2020-09-28 10:34:03,112 framework_design_oops.tests.test_smoke_cases INFO Cab booking feature test case execution started
+2020-09-28 10:34:03,112 selenium.webdriver.remote.remote_connection DEBUG POST http://127.0.0.1:59796/session/2f93da3065c58d13880dcc5256d03bae/element {"using": "xpath", "value": "//span[contains(text(), 'Cabs') and contains(@class, 'iconText ')]"}
+2020-09-28 10:34:03,112 urllib3.connectionpool DEBUG http://127.0.0.1:59796 "POST /session/2f93da3065c58d13880dcc5256d03bae/element HTTP/1.1" 404 1000
+2020-09-28 10:34:03,112 selenium.webdriver.remote.remote_connection DEBUG Finished Request
