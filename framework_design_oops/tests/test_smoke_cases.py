@@ -6,7 +6,7 @@ import  pytest
 from time import  sleep
 
 
-@pytest.skip()
+@pytest.mark.skip
 def test_search_on_google(setup):
     try:
         logger.info("test cases: test_search_on_google, executed started")
